@@ -1,0 +1,102 @@
+- agak tricky memang untuk pemula yang baru menggunakan tailwind membuat navbar responsive
+- namun saya siapkan salah satu caranya menggunakan alpinejs
+
+<!-- sc -->
+
+<!-- versi pertama -->
+<!-- Header -->
+<header x-data="{ open: false }">
+    <nav class="container mx-auto px-8 py-3">
+        <div class="md:flex md:items-center">
+            <div class="flex items-center justify-between">
+                <div class="md:mr-16">
+                    <h3 class="text-xl font-medium text-gray-700">Logo</h3>
+                    <!-- Logo here -->
+                    <!-- <img src="./img/logo.png" alt="Logo" class="w-26" /> -->
+                </div>
+                <div class="md:hidden">
+                    <svg @click="open = !open" class="fill-current w-6" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <ul class="flex">
+                    <li class="mr-4 text-sm text-gray-800">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="mr-4 text-sm text-gray-800">
+                        <a href="#">About</a>
+                    </li>
+                    <li class="mr-4 text-sm text-gray-800">
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li class="mr-4 text-sm text-gray-800">
+                        <a href="#">Product</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div :class="{ 'hidden' : open === false }" class="border-t md:hidden relative">
+        <ul class="flex flex-col items-end px-8 absolute right-0 w-full bg-white">
+            <li class="py-3 border-b">Home</li>
+            <li class="py-3 border-b">About</li>
+            <li class="py-3 border-b">Portfolio</li>
+            <li class="py-3 border-b">Product</li>
+            <li class="py-3 border-b">Career</li>
+            <li class="py-3 border-b">Blog</li>
+        </ul>
+    </div>
+</header>
+<!-- End Header -->
+
+<!-- versi ke 2 -->
+<header x-data="{ open: false }">
+    <nav class="container mx-auto px-8 py-3">
+        <div class="md:flex md:items-center">
+            <div class="flex items-center justify-between">
+                <div class="md:mr-16">
+                    <h3 class="text-xl font-medium text-gray-700">Logo</h3>
+                    <!-- Logo here -->
+                    <!-- <img src="./img/logo.png" alt="Logo" class="w-26" /> -->
+                </div>
+                <div class="md:hidden">
+                    <svg @click="open = !open" class="fill-current w-6" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <ul class="flex">
+                    <li class="mr-4 text-sm text-gray-800">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="mr-4 text-sm text-gray-800">
+                        <a href="#">About</a>
+                    </li>
+                    <li class="mr-4 text-sm text-gray-800">
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li class="mr-4 text-sm text-gray-800">
+                        <a href="#">Product</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div :class="{ 'hidden' : open === false }" class="border-t md:hidden">
+        <ul class="flex flex-col items-end px-8">
+            <li class="py-3 border-b">Home</li>
+            <li class="py-3 border-b">About</li>
+            <li class="py-3 border-b">Portfolio</li>
+            <li class="py-3 border-b">Product</li>
+            <li class="py-3 border-b">Career</li>
+            <li class="py-3 border-b">Blog</li>
+        </ul>
+    </div>
+</header>
